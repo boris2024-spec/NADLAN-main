@@ -1,10 +1,12 @@
 import multer from 'multer';
-import { v2 as cloudinary } from 'cloudinary';
+import cloudinaryPkg from 'cloudinary';
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 const multerStorageCloudinary = require('multer-storage-cloudinary');
 const CloudinaryStorage = multerStorageCloudinary.CloudinaryStorage || multerStorageCloudinary;
 import path from 'path';
+
+const cloudinary = cloudinaryPkg.v2 || cloudinaryPkg;
 
 // Cloudinary configuration
 cloudinary.config({

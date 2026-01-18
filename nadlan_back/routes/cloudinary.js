@@ -1,5 +1,7 @@
 import express from 'express';
-import { v2 as cloudinary } from 'cloudinary';
+import cloudinaryPkg from 'cloudinary';
+
+const cloudinary = cloudinaryPkg.v2 || cloudinaryPkg;
 
 // Make sure the config is loaded from .env (dotenv is already called in server.js)
 cloudinary.config({
